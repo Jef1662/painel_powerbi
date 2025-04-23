@@ -1,0 +1,25 @@
+
+  {
+    "EXT": [
+      {
+        "id": "print_1",
+        "name": "Produção Mensal",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=70e0599fd467bad93dc8"
+      },
+      {
+        "id": "print_2",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=1a467f44955f010e4e2d"
+      }
+    ],
+    "IMP": [
+      {
+        "id": "print_1",
+        "name": "Eficiência Impressoras",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=70e0599fd467bad93dc8"
+      }
+
+    ]
+
+
+  }

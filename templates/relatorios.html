@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatórios</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .header .btn-voltar {
+      position: absolute;
+      left: 16px;
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: #007bff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .header .titulo {
+      font-size: 12px;
+      color: #333;
+      text-align: center;
+    }
+    .report-container {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e9e5e5;
+    }
+    .report-container img {
+      max-width: 100%;
+      max-height: 100%;
+      box-shadow: #a5a5a5 0px 0px 10px;
+      border-radius: 6px;
+    }
+    .no-report {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <form action="/" method="get" style="margin:0;">
+      <button type="submit" class="btn-voltar">← Voltar</button>
+    </form>
+    <div class="titulo" id="titulo-relatorio">Carregando...</div>
+  </div>
+
+  <div class="report-container">
+    <img id="relatorio-img" src="" alt="Relatório">
+  </div>
+
+  <!-- 🔒 JSON seguro inserido como atributo -->
+  <div id="links-json" data-json='{{ links_json | safe }}' style="display:none;"></div>
+
+  <script>
+    const baseStatic = "{{ url_for('static', filename='') }}";
+    const setor = new URLSearchParams(window.location.search).get("setor") || '';
+    const tituloEl = document.getElementById('titulo-relatorio');
+    const imgEl = document.getElementById('relatorio-img');
+
+    // 🔒 Pegando JSON de forma segura
+    const rawJson = document.getElementById("links-json").getAttribute("data-json");
+    const links = JSON.parse(rawJson);
+    const imagens = links[setor] || [];
+
+    let idx = 0;
+
+    function trocarImagem() {
+      if (!imagens.length) {
+        tituloEl.textContent = 'Nenhum relatório disponível';
+        imgEl.style.display = 'none';
+        return;
+      }
+      const rel = imagens[idx];
+      const caminho = baseStatic + 'screenshots/' + setor + '_' + rel.id + '.png';
+      imgEl.src = caminho;
+      imgEl.alt = rel.name;
+      tituloEl.textContent = `Relatório ${idx + 1} de ${imagens.length} – Setor ${setor}`;
+      idx = (idx + 1) % imagens.length;
+    }
+
+    window.onload = function() {
+      trocarImagem();
+      setInterval(trocarImagem, 10000);
+    };
+  </script>
+
+</body>
+</html>
