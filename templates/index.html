@@ -18,28 +18,31 @@
 
         .logo {
             margin-top: 40px;
-            margin-bottom: 20px;
-            max-width: 180px;
+            margin-bottom: 30px;
+            max-width: 200px;
         }
 
         .form-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 20px;
         }
 
         select {
-            padding: 6px 10px;
-            font-size: 14px;
-            border-radius: 4px;
+            width: 280px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
             border: 1px solid #ccc;
+            text-align: center;
         }
 
         button {
-            padding: 6px 16px;
-            font-size: 14px;
+            padding: 8px 20px;
+            font-size: 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             background-color: #007bff;
             color: white;
             cursor: pointer;
@@ -67,8 +70,8 @@
 
     <form class="form-container" action="/relatorios" method="get">
         <select name="setor" required>
-            {% for setor in setores %}
-                <option value="{{ setor }}">{{ setor }}</option>
+            {% for s in setores %}
+                <option value="{{ s }}" {% if s == setor %}selected{% endif %}>{{ s }}</option>
             {% endfor %}
         </select>
         <button type="submit">Ir</button>

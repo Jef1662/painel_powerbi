@@ -31,9 +31,11 @@ def salvar_links(dados):
 def index():
     setor = request.args.get('setor', 'EXTRUSAO')  # valor padrão
     dados = carregar_links()
+    setores = list(dados.keys())
     relatorios = dados.get(setor.upper(), [])
     logging.info(f"Acessada página inicial - Setor: {setor}")
-    return render_template('index.html', setor=setor, relatorios=relatorios)
+    return render_template('index.html', setor=setor, relatorios=relatorios, setores=setores)
+
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
