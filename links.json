@@ -1,25 +1,41 @@
 
   {
-    "EXT": [
+    "COS": [
       {
-        "id": "print_1",
+        "id": "A15_TON",
         "name": "Produção Mensal",
-        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=70e0599fd467bad93dc8"
-      },
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=70e0599fd467bad93dc8"      },
       {
-        "id": "print_2",
+        "id": "A15_SCS",
         "name": "Produção Diária",
-        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=1a467f44955f010e4e2d"
-      }
-    ],
-    "IMP": [
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=1a467f44955f010e4e2d"      },
       {
-        "id": "print_1",
-        "name": "Eficiência Impressoras",
-        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=70e0599fd467bad93dc8"
-      }
-
+        "id": "B_TON",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=5e0ae42c957df27bbc0c"},
+      {
+        "id": "B_SCS",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=f18b257764c0f4a001b5"      },
+      {
+        "id": "B50_TON",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=c5869693f0d3af5a052a"      },
+      {
+        "id": "B50_SCS",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=3a08dcf0512904085e0c"      },
+      {
+        "id": "C56_TON",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=bffef9813c26010d4fa4"      },
+      {
+        "id": "D_TON",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=1f203adda313a4b2320e"      },
+      {
+        "id": "D_SCS",
+        "name": "Produção Diária",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=8eaa4804e07de5ba723e"      } 
     ]
-
-
   }
