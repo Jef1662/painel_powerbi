@@ -60,10 +60,14 @@ with open(LINKS_FILE, 'r', encoding='utf-8') as f:
 
 for setor, relatorios in dados.items():
     for rel in relatorios:
-        url = rel['url']
+        url = rel.get('url', '').strip()
         id_ = rel['id']
         nome_arquivo = f"{setor}_{id_}.png"
         caminho_arquivo = os.path.join(OUTPUT_DIR, nome_arquivo)
+
+        if not url:
+            registrar_log(f"URL vazia para {setor} - ID: {id_}. Ignorando captura.")
+            continue
 
         registrar_log(f"Acessando: {url}")
         driver.get(url)
