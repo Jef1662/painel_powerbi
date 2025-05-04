@@ -5,6 +5,7 @@ import time
 import json
 import os
 from PIL import Image  # Importando Pillow para manipulação de imagens
+from datetime import datetime
 
 # Caminho para o ChromeDriver
 CHROME_DRIVER_PATH = r"C:\Users\jeferson.s\OneDrive - INPLAC SA\Ambientes_virtuais\Ambiente_2\painel_web\chromedriver.exe"
@@ -15,6 +16,11 @@ LINKS_FILE = os.path.join(os.path.dirname(__file__), 'links.json')
 # Pasta de saída para os screenshots
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'static', 'screenshots')
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# Log para verificar onde os prints estão sendo salvos
+log_path = os.path.join(os.path.dirname(__file__), 'log_screenshots.txt')
+with open(log_path, "a") as log_file:
+    log_file.write(f"{datetime.now()} - Salvando screenshots em: {OUTPUT_DIR}\n")
 
 # Configurações do navegador
 chrome_options = Options()
