@@ -7,6 +7,18 @@ import os
 from PIL import Image  # Importando Pillow para manipulação de imagens
 from datetime import datetime
 
+# Configuração do log
+try:
+    import os
+    from datetime import datetime
+    log_path = r"C:\Users\powerbi\Desktop\Pagina_web_alternante_II\painel_powerbi\logs\execucao_script.txt"
+    with open(log_path, "a") as f:
+        f.write(f"[{datetime.now()}] Script iniciado com sucesso.\n")
+except Exception as e:
+    with open(log_path, "a") as f:
+        f.write(f"[{datetime.now()}] Erro ao iniciar script: {str(e)}\n")
+    raise
+
 # Caminho para o ChromeDriver
 CHROME_DRIVER_PATH = r"C:\Users\jeferson.s\OneDrive - INPLAC SA\Ambientes_virtuais\Ambiente_2\painel_web\chromedriver.exe"
 
