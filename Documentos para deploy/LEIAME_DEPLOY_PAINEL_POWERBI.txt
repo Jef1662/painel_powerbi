@@ -1,0 +1,25 @@
+📦 O que esse .bat vai fazer:
+Detecta o ambiente (PC local ou servidor).
+
+Define a variável de ambiente CHROMEDRIVER_PATH.
+
+Cria as pastas necessárias (logs, screenshots, etc.).
+
+Instala o Python se necessário (com prompt).
+
+Ativa ambiente virtual (se existir) ou cria um.
+
+Instala dependências do requirements.txt.
+
+Cria/atualiza serviço NSSM (opcional).
+
+Loga tudo num arquivo .log pra auditoria.
+
+
+
+✅ Pré-requisitos:
+Python 3.13 já instalado no caminho definido.
+
+O requirements.txt precisa estar no mesmo diretório do .bat.
+
+O NSSM precisa estar no caminho certo ou você ajusta a variável NSSM_PATH.
