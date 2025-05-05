@@ -72,7 +72,7 @@ for setor, relatorios in dados.items():
         registrar_log(f"Acessando: {url}")
         driver.get(url)
 
-        time.sleep(10)  # Aguarda carregamento
+        time.sleep(20)  # Aguarda carregamento
 
         driver.save_screenshot(caminho_arquivo)
         cortar_imagem(caminho_arquivo)
