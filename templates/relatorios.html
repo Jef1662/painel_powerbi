@@ -99,6 +99,7 @@
       }
       const rel = imagens[idx];
       const caminho = baseStatic + 'screenshots/' + setor + '_' + rel.id + '.png';
+      const timestamp = new Date().getTime();
       imgEl.src = caminho;
       imgEl.alt = rel.name;
       tituloEl.textContent = `Relatório ${idx + 1} de ${imagens.length} – Setor ${setor}`;
@@ -107,7 +108,7 @@
 
     window.onload = function() {
       trocarImagem();
-      setInterval(trocarImagem, 15000);
+      setInterval(trocarImagem, 15000); // ⏱ Troca a cada 15 segundos
     };
   </script>
 
