@@ -1,6 +1,31 @@
 
   {
     "COS": [
+            {
+        "id": "AQ1",
+        "name": "Slide_1",
+        "url": ""
+      },
+      {
+        "id": "AQ2",
+        "name": "Slide_2",
+        "url": ""
+      },
+      {
+        "id": "AQ3",
+        "name": "Slide_3",
+        "url": ""
+      },
+      {
+        "id": "AQ4",
+        "name": "Slide_4",
+        "url": ""
+      },
+      {
+        "id": "AQ5",
+        "name": "Slide_5",
+        "url": ""
+      },
       {
         "id": "A15_TON",
         "name": "Produção Mensal",
@@ -40,33 +65,9 @@
       {
         "id": "E_TON",
         "name": "Produção Diária",
-        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=8eaa4804e07de5ba723e"      },
-      {
-        "id": "AQ1",
-        "name": "Slide_1",
-        "url": ""
-      },
-      {
-        "id": "AQ2",
-        "name": "Slide_2",
-        "url": ""
-      },
-      {
-        "id": "AQ3",
-        "name": "Slide_3",
-        "url": ""
-      },
-      {
-        "id": "AQ4",
-        "name": "Slide_4",
-        "url": ""
-      },
-      {
-        "id": "AQ5",
-        "name": "Slide_5",
-        "url": ""
-      }
-    ],
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=8eaa4804e07de5ba723e"      }
+    
+      ],
     "Meta_geral_producao": [
         {
         "id": "1",
