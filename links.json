@@ -1,6 +1,10 @@
-
-  {
-    "COS_1": [
+ {
+    "COS": [
+        {
+        "id": "PRODUÇÃO_DIA_ANTERIOR_",
+        "name": "Imagem_1",
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiMmVlODM3NDEtN2ZmNy00OTVlLTk5NTYtZjI0OGJmNjBmMGI1IiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=a44220fb4eb9071065e5"     
+      },
             {
         "id": "AQ1",
         "name": "Slide_1",
@@ -25,7 +29,10 @@
         "id": "AQ5",
         "name": "Slide_5",
         "url": ""
-      },
+      }
+      ],
+    
+    "COS_2": [
       {
         "id": "PRODUÇÃO_DIA_ANTERIOR_",
         "name": "Imagem_1",
@@ -72,14 +79,6 @@
         "name": "Produção Diária",
         "url": "https://app.powerbi.com/view?r=eyJrIjoiNjY4OWFhOWItM2ZjMC00MTlhLWI3YzUtOTEyYmEyMWEzZGRkIiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=8eaa4804e07de5ba723e"      }
     
-      ],
-    
-    "COS_2": [
-        {
-        "id": "PRODUÇÃO_DIA_ANTERIOR_",
-        "name": "Imagem_1",
-        "url": "https://app.powerbi.com/view?r=eyJrIjoiMmVlODM3NDEtN2ZmNy00OTVlLTk5NTYtZjI0OGJmNjBmMGI1IiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=a44220fb4eb9071065e5"     
-      }
     ],
     "Meta_geral_producao": [
         {
