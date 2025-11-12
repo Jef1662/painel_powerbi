@@ -30,11 +30,17 @@ def relatorios():
     if not setor or setor not in dados:
         return redirect(url_for('index'))
 
-    links = dados
+    links_setor = dados.get(setor, [])
+
+    # Adiciona o caminho completo da imagem para cada relatório do setor específico
+    for rel in links_setor:
+        id_ = rel['id']
+        nome_arquivo = f"{setor}_{id_}.png"
+        # Gera a URL para o arquivo estático (imagem)
+        rel['imagem_path'] = url_for('static', filename=f'screenshots/{nome_arquivo}')
+
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    return render_template('relatorios.html', setor=setor, links_json=json.dumps(links), timestamp=timestamp)  # JSON como string segura
+    return render_template('relatorios.html', setor=setor, links_json=json.dumps(links_setor), timestamp=timestamp)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8050)
-
-

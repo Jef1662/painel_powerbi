@@ -86,8 +86,7 @@
 
     // 🔒 Pegando JSON de forma segura
     const rawJson = document.getElementById("links-json").getAttribute("data-json");
-    const links = JSON.parse(rawJson);
-    const imagens = links[setor] || [];
+    const imagens = JSON.parse(rawJson) || [];
 
     let idx = 0;
 
@@ -98,8 +97,7 @@
         return;
       }
       const rel = imagens[idx];
-      const caminho = baseStatic + 'screenshots/' + setor + '_' + rel.id + '.png';
-      const timestamp = new Date().getTime();
+      const caminho = rel.imagem_path + '?t=' + new Date().getTime(); // Adiciona timestamp para evitar cache
       imgEl.src = caminho;
       imgEl.alt = rel.name;
       tituloEl.textContent = `Relatório ${idx + 1} de ${imagens.length} – Setor ${setor}`;

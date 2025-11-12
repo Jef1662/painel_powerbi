@@ -6,6 +6,7 @@ from PIL import Image
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
 
 # ===================== CONFIGURAÇÕES GERAIS =====================
 
@@ -13,6 +14,9 @@ from selenium.webdriver.chrome.options import Options
 CHROME_DRIVER_PATH = os.getenv("CHROMEDRIVER_PATH")
 if not CHROME_DRIVER_PATH or not os.path.exists(CHROME_DRIVER_PATH):
     raise FileNotFoundError(f"ChromeDriver não encontrado no caminho: {CHROME_DRIVER_PATH}")
+
+# Tempo de espera para o carregamento da página (em segundos)
+WAIT_TIME = int(os.getenv("SCREENSHOT_WAIT_TIME", 30))
 
 # Caminho para o arquivo de links
 LINKS_FILE = os.path.join(os.path.dirname(__file__), 'links.json')
@@ -72,7 +76,7 @@ for setor, relatorios in dados.items():
         registrar_log(f"Acessando: {url}")
         driver.get(url)
 
-        time.sleep(30)  # Aguarda carregamento
+        time.sleep(WAIT_TIME)  # Aguarda carregamento
 
         driver.save_screenshot(caminho_arquivo)
         cortar_imagem(caminho_arquivo)
