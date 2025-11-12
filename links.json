@@ -33,14 +33,9 @@
       ],
 
     "Sala_Diretoria": [
-        {
+      {
         "id": "1",
         "name": "Imagem_1",
-        "url": ""     
-      },
-      {
-        "id": "2",
-        "name": "Imagem_2",
         "url": "https://app.powerbi.com/view?r=eyJrIjoiMmVlODM3NDEtN2ZmNy00OTVlLTk5NTYtZjI0OGJmNjBmMGI1IiwidCI6ImIxNjcxMmQ5LTIzYzctNDE4MC04OTZiLTVjMTExZjkyYTlmZSJ9&pageName=ReportSection307e1b9a7eb65758926a" 
             
       }

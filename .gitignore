@@ -1,8 +1,19 @@
-__pycache__/
-.venv/
-*.pyc
-*.pyo
-*.pyd
-.DS_Store
-*.db
+# Arquivos de configuração e dados gerados em tempo de execução
+# Este arquivo é modificado pela aplicação e não deve ser versionado.
+links.json
+
+# Screenshots gerados automaticamente pelo script.
+# A pasta inteira deve ser ignorada.
 static/screenshots/
+
+# Arquivos de log gerados pela aplicação.
+logs/
+*.log
+
+# Arquivos de ambiente virtual do Python.
+venv/
+__pycache__/
+
+# Arquivos específicos do sistema operacional.
+.DS_Store
+Thumbs.db

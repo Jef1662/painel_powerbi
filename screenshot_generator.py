@@ -7,14 +7,16 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 # ===================== CONFIGURAÇÕES GERAIS =====================
 
-# Caminho para o ChromeDriver via variável de ambiente
-CHROME_DRIVER_PATH = os.getenv("CHROMEDRIVER_PATH")
-if not CHROME_DRIVER_PATH or not os.path.exists(CHROME_DRIVER_PATH):
-    raise FileNotFoundError(f"ChromeDriver não encontrado no caminho: {CHROME_DRIVER_PATH}")
-
+# A partir do Selenium 4.6+, o Selenium Manager gerencia o ChromeDriver automaticamente.
+# Não é mais necessário definir o caminho manualmente.
+# CHROME_DRIVER_PATH = os.getenv("CHROMEDRIVER_PATH")
+# if not CHROME_DRIVER_PATH or not os.path.exists(CHROME_DRIVER_PATH):
+#     raise FileNotFoundError(f"ChromeDriver não encontrado no caminho: {CHROME_DRIVER_PATH}")
 # Tempo de espera para o carregamento da página (em segundos)
 WAIT_TIME = int(os.getenv("SCREENSHOT_WAIT_TIME", 30))
 
@@ -45,9 +47,16 @@ chrome_options = Options()
 chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--window-size=2560,1440")
+chrome_options.add_argument("--disable-cache")
+chrome_options.add_argument("--disk-cache-size=0")
+chrome_options.add_argument("--media-cache-size=0")
+# Suprime logs de erro irrelevantes do console
+chrome_options.add_argument('--log-level=3')
+chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-service = Service(CHROME_DRIVER_PATH)
-driver = webdriver.Chrome(service=service, options=chrome_options)
+# O Selenium Manager encontrará e usará o driver correto automaticamente.
+# service = Service(CHROME_DRIVER_PATH)
+driver = webdriver.Chrome(options=chrome_options)
 
 # ===================== FUNÇÃO DE CORTE DE IMAGEM =====================
 
@@ -73,15 +82,31 @@ for setor, relatorios in dados.items():
             registrar_log(f"URL vazia para {setor} - ID: {id_}. Ignorando captura.")
             continue
 
-        registrar_log(f"Acessando: {url}")
-        driver.get(url)
+        try:
+            registrar_log(f"Acessando: {url}")
+            
+            # Navega para a URL
+            driver.get(url)
 
-        time.sleep(WAIT_TIME)  # Aguarda carregamento
+            # Aguarda o carregamento do relatório do Power BI e limpa o cache
+            wait = WebDriverWait(driver, WAIT_TIME)
+            driver.execute_script("window.localStorage.clear();")
+            driver.execute_script("window.sessionStorage.clear();")
+            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.report-container, report-embed")))
 
-        driver.save_screenshot(caminho_arquivo)
-        cortar_imagem(caminho_arquivo)
+            # Adiciona uma espera fixa para garantir que os dados do PBI sejam carregados
+            registrar_log("Aguardando 15 segundos para o carregamento completo do Power BI...")
+            time.sleep(15)
+            
+            driver.save_screenshot(caminho_arquivo)
+            cortar_imagem(caminho_arquivo)
 
-        registrar_log(f"Screenshot salvo: {caminho_arquivo}")
+            registrar_log(f"Screenshot salvo: {caminho_arquivo}")
+
+        except Exception as e:
+            # Captura qualquer erro (timeout, elemento não encontrado, etc.), registra e continua
+            error_message = str(e).split('\n')[0] # Pega apenas a primeira linha do erro
+            registrar_log(f"ERRO ao processar {url}: {error_message}")
 
 driver.quit()
 registrar_log("Script finalizado com sucesso.")
